@@ -1,0 +1,2 @@
+ltspice = "../../ltspice/"
+images = "../../images/"

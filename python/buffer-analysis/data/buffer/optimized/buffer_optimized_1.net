@@ -1,0 +1,31 @@
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\buffer\optimized\buffer_optimized.asc
+M1 supplyL OUT OUTL supplyL EECMOSP l=l_min_pmos w={w_min_pmos*S_LOAD}
+M2 OUTL OUT 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S_LOAD}
+M3 supply N001 OUT supply EECMOSP l=l_min_pmos w={w_min_pmos*S2}
+M4 OUT N001 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S2}
+M5 supply OUTMIN N001 supply EECMOSP l=l_min_pmos w={w_min_pmos*S1}
+M6 N001 OUTMIN 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S1}
+M7 supply IN OUTMIN supply EECMOSP l=l_min_pmos w=w_min_pmos
+M8 OUTMIN IN 0 0 EECMOSN l=l_min_nmos w=w_min_nmos
+Vsupply supply 0 1
+VsupplyL supplyL 0 1
+Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\giorg\AppData\Local\LTspice\lib\cmp\standard.mos
+* - ### Buffer\n    - #### energy\n        - energy_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(supply) and i(Vsupply) between 13 ns and 22 ns`\n    - #### delay\n        - ##### rise\n            - rise_delay_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(IN) and V(OUT)`\n        - ##### fall\n            - fall_delay_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(IN) and V(OUT)`
+.PARAM l_min_pmos=0.1u  ; Batch instruction
+.PARAM w_min_pmos=0.2u  ; Batch instruction
+.PARAM l_min_nmos=0.1u  ; Batch instruction
+.PARAM w_min_nmos=0.12u  ; Batch instruction
+.PARAM S1= table(index,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9999999999999999,0.9999999999999997,1.0,1.0000000000000016,1.0000000000000018,1.0,4.328046659103719,4.713706975522789)  ; Batch instruction
+.PARAM S2= table(index,1.3647999011944631,1.3965765279828888,1.4299327305826866,1.4649945042901982,1.5019021886056878,1.540812663002881,1.5819019386783348,1.6253683225229947,1.6714362164054948,1.720360770816623,1.7724336130911633,1.8279899682908678,1.8874175891852927,1.951168104560023,2.019771589496723,2.093855544601331,2.1741700123510337,2.2616213705458468,2.35731875378012,2.4626392075739614,2.5793217515923383,2.709607339065668,2.8564551590144087,3.023892662036621,3.2176153181053326,3.4460933086972543,3.7228274478724823,4.071650810194132,4.542338118056928,5.282029651178344,7.0710677572418765,7.071067517812725,7.071067896852229,7.071068328597093,7.07106764198705,7.071068321438883,7.071059487526673,7.07106787533829,7.0710678802375835,7.0710681450921395,14.710957759093935,15.35204956471366)  ; Batch instruction
+.PARAM S_LOAD=50  ; Batch instruction
+.inc ../../../../../ltspice/models-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
+.tran 0 50n 0
+.step param index 1 42.0 1
+.measure tran energy_connected INTEG (v(supply)*i(Vsupply)) from=18n to=22n
+.measure tran rise_delay_connected trig v(IN) val=0.5 fall=1 targ v(OUT) val=0.5 rise=1
+.measure tran fall_delay_connected trig v(IN) val=0.5 rise=1 targ v(OUT) val=0.5 fall=1
+.backanno
+.end

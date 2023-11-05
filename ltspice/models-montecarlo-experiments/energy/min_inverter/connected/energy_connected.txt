@@ -1,0 +1,2 @@
+.measure tran energy INTEG (v(supply)*i(Vsupply)) from=18n to=22n
+
