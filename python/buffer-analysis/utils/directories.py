@@ -1,2 +1,0 @@
-ltspice = "../../ltspice/"
-images = "../../images/"
