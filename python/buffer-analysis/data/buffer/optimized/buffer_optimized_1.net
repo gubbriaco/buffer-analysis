@@ -1,4 +1,4 @@
-* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\buffer\optimized\buffer_optimized.asc
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\optimized\buffer_optimized.asc
 M1 supplyL OUT OUTL supplyL EECMOSP l=l_min_pmos w={w_min_pmos*S_LOAD}
 M2 OUTL OUT 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S_LOAD}
 M3 supply N001 OUT supply EECMOSP l=l_min_pmos w={w_min_pmos*S2}
@@ -18,10 +18,10 @@ Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
 .PARAM w_min_pmos=0.2u  ; Batch instruction
 .PARAM l_min_nmos=0.1u  ; Batch instruction
 .PARAM w_min_nmos=0.12u  ; Batch instruction
-.PARAM S1= table(index,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.29568,1.645862,1.0,3.272149,1.0,1.0,1.0,1.0,3.639962,3.687)  ; Batch instruction
-.PARAM S2= table(index,1.522233,1.558074,1.594455,1.631416,1.669031,1.705245,1.744604,1.785162,1.827207,1.871095,1.95611,1.893608,2.057649,2.078245,2.181277,2.183318,2.232473,2.534522,2.415108,2.568006,2.67192,2.808308,2.959713,3.130316,3.324425,3.566452,3.810408,4.182928,4.65833,5.299788,6.999738,7.071009,7.991315,6.808999,7.082803,15.15794,7.074697,6.539919,8.500874,7.071916,13.42104,13.36968)  ; Batch instruction
+.PARAM S1= table(index,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.039186,1.199602,1.412575,1.715843,2.215972,3.453831,3.640657,3.66022,4.001932,3.901033,3.673914,3.675541)  ; Batch instruction
+.PARAM S2= table(index,1.367427,1.399287,1.432732,1.467889,1.504898,1.543918,1.585125,1.628719,1.674924,1.723999,1.776235,1.831971,1.891596,1.955565,2.024412,2.098768,2.179391,2.267192,2.363291,2.469079,2.586311,2.717253,2.864901,3.033338,3.228347,3.458551,3.737746,4.090415,4.568198,5.327514,7.208281,7.744682,8.404093,9.262403,10.52609,13.14122,13.49195,13.52816,10.96497,11.01757,13.55344,13.55644)  ; Batch instruction
 .PARAM S_LOAD=50  ; Batch instruction
-.inc ../../../../../ltspice/models-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
+.inc ../../../../../ltspice/utils/utils-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
 .tran 0 50n 0
 .step param index 1 38.27272727272727 1
 .measure tran energy_connected INTEG (v(supply)*i(Vsupply)) from=13n to=22n

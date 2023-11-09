@@ -1,0 +1,28 @@
+Circuit: * D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\minimum_inverter_disconnected.asc
+
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+.step run=1
+.step run=2
+
+Date: Thu Nov  2 00:15:16 2023
+Total elapsed time: 0.285 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3148
+traniter = 3134
+tranpoints = 1253
+accept = 1198
+rejected = 55
+matrix size = 8
+fillins = 0
+solver = Normal
+Avg thread counts: 1.9/3.2/3.2/1.9
+Matrix Compiler1:      17 opcodes  0.3/[0.1]/0.2
+Matrix Compiler2: off  [0.1]/0.2/0.2
+

@@ -1,4 +1,4 @@
-* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\buffer\standard\buffer.asc
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\standard\buffer.asc
 M1 supplyL OUT OUTL supplyL EECMOSP l=l_min_pmos w={w_min_pmos*S_LOAD}
 M2 OUTL OUT 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S_LOAD}
 M3 supply N001 OUT supply EECMOSP l=l_min_pmos w={w_min_pmos*S2}
@@ -21,7 +21,7 @@ Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
 .PARAM S1=mc(4,0.75)  ; Batch instruction
 .PARAM S2=mc(16,0.75)  ; Batch instruction
 .PARAM S_LOAD=50  ; Batch instruction
-.inc ../../../../../ltspice/models-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
+.inc ../../../../../ltspice/utils/utils-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
 .tran 0 50n 0
 .step param run 1 100 1
 .meas S1_values param S1

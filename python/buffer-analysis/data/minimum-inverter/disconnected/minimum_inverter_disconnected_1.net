@@ -1,4 +1,4 @@
-* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\minimum-inverter\disconnected\minimum_inverter_disconnected.asc
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\disconnected\minimum_inverter_disconnected.asc
 M1 supply IN OUT supply EECMOSP l=l_min_pmos w=w_min_pmos
 M2 OUT IN 0 0 EECMOSN l=l_min_nmos w=w_min_nmos
 Vsupply supply 0 1
@@ -14,7 +14,7 @@ VsupplyL supplyL 0 1
 .PARAM w_min_pmos=0.2u  ; Batch instruction
 .PARAM l_min_nmos=0.1u  ; Batch instruction
 .PARAM w_min_nmos=0.12u  ; Batch instruction
-.inc ../../../../../ltspice/models-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
+.inc ../../../../../ltspice/utils/utils-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
 .tran 0 50n 0
 .step param run 1 2 1
 .measure tran energy_disconnected INTEG (v(supply)*i(Vsupply)) from=18n to=22n

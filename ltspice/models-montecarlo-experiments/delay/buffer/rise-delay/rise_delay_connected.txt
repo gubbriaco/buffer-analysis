@@ -1,2 +1,0 @@
-.measure tran rise_delay_connected trig v(IN) val=0.5 fall=1 targ v(OUT) val=0.5 rise=1
-

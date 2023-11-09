@@ -11,7 +11,7 @@ def check_file(buffer_raw_file_path):
         print(f"Error detected: {str(e)}", end="\n")
 
 
-def check_image(buffer_simulation_path_image):
+def check_output_image(buffer_simulation_path_image):
     if os.path.exists(buffer_simulation_path_image):
         try:
             os.remove(buffer_simulation_path_image)
