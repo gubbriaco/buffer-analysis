@@ -1,11 +1,19 @@
 from utils.paths import rit_models_for_ltspice_file_path
 
+# pmos-minimum_inverter_sizing_analysis
+w_min_pmos_start = '0.12u'
+w_min_pmos_stop = '0.24u'
+w_min_pmos_step = '0.01u'
+w_min_pmos_step_param = f'.step param w_min_pmos_analysis {w_min_pmos_start} {w_min_pmos_stop} {w_min_pmos_step}'
+
+# save-w_min_pmos_analysis
+save_w_min_pmos_analysis = ".meas w_min_pmos_analysis_values param w_min_pmos_analysis"
+
 # number-of-simulations
 nr_runs = 100
 
 # pmos
 l_min_pmos = '0.1u'
-w_min_pmos = '0.2u'
 
 # nmos
 l_min_nmos = '0.1u'

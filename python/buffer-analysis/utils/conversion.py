@@ -1,10 +1,10 @@
 from enum import Enum
-import statistics as st
 
 
 class Order(Enum):
     FEMTO = 1
     PICO = 2
+    MICRO = 3
 
 
 def get_order(number):
@@ -31,6 +31,8 @@ def to_order(old_number, new_order_instance):
         new_order = -15
     elif new_order_instance == Order.PICO:
         new_order = -12
+    elif new_order_instance == Order.MICRO:
+        new_order = -6
 
     old_order = get_order(old_number)
 
@@ -45,7 +47,9 @@ def to_order(old_number, new_order_instance):
         scale_order = abs(new_order) - old_order
 
     scale_factor = 10 ** (scale_order)
+
     new_number = old_number * scale_factor
+
     new_number_str = str(new_number)
     new_number_str = new_number_str[:-4]
     new_number = float(new_number_str) / scale_factor

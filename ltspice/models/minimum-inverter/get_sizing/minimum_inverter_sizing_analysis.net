@@ -1,0 +1,11 @@
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\get_sizing\minimum_inverter_sizing_analysis.asc
+M1 OUT IN 0 N001 EECMOSN l=l_min_nmos w=w_min_nmos
+Cload OUT 0 5f
+Vsupply supply 0 1
+Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
+M2 supply IN OUT supply EECMOSP l=l_min_pmos w={w_min_pmos_analysis}
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\giorg\AppData\Local\LTspice\lib\cmp\standard.mos
+.backanno
+.end

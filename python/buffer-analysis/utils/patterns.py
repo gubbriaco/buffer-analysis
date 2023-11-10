@@ -6,3 +6,5 @@ rise_delay_connected_pattern = r"Measurement: rise_delay_connected\n(.*?)(?=\n\n
 fall_delay_connected_pattern = r"Measurement: fall_delay_connected\n(.*?)(?=\n\n|\Z)"
 rise_delay_disconnected_pattern = r"Measurement: rise_delay_disconnected\n(.*?)(?=\n\n|\Z)"
 fall_delay_disconnected_pattern = r"Measurement: fall_delay_disconnected\n(.*?)(?=\n\n|\Z)"
+
+w_min_pmos_analysis_pattern = r"Measurement: w_min_pmos_analysis_values\n(.*?)(?=\n\n|\Z)"

@@ -11,35 +11,35 @@ Direct Newton iteration for .op point succeeded.
 
 Measurement: energy_connected
   step	INTEG(v(supply)*i(vsupply))	FROM	TO
-     1	-1.3109e-15	1.8e-08	2.2e-08
-     2	-1.3109e-15	1.8e-08	2.2e-08
+     1	-1.23608e-15	1.8e-08	2.2e-08
+     2	-1.23608e-15	1.8e-08	2.2e-08
 
 Measurement: rise_delay_connected
   step	rise_delay_connected	FROM	TO
-     1	2.03948e-11	1.0015e-08	1.00354e-08
-     2	2.03948e-11	1.0015e-08	1.00354e-08
+     1	2.1613e-11	1.0015e-08	1.00366e-08
+     2	2.1613e-11	1.0015e-08	1.00366e-08
 
 Measurement: fall_delay_connected
   step	fall_delay_connected	FROM	TO
-     1	2.05308e-11	5.005e-09	5.02553e-09
-     2	2.05308e-11	5.005e-09	5.02553e-09
+     1	1.8692e-11	5.005e-09	5.02369e-09
+     2	1.8692e-11	5.005e-09	5.02369e-09
 
 
-Date: Thu Nov  9 20:24:02 2023
-Total elapsed time: 0.297 seconds.
+Date: Fri Nov 10 15:21:51 2023
+Total elapsed time: 0.302 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 3148
-traniter = 3134
-tranpoints = 1253
-accept = 1198
-rejected = 55
+totiter = 3066
+traniter = 3052
+tranpoints = 1228
+accept = 1174
+rejected = 54
 matrix size = 8
 fillins = 0
 solver = Normal
 Avg thread counts: 1.9/3.2/3.2/1.9
-Matrix Compiler1: 300 bytes object code size  0.3/0.3/[0.3]
-Matrix Compiler2: off  [0.2]/0.4/0.2
+Matrix Compiler1: 300 bytes object code size  0.2/0.2/[0.2]
+Matrix Compiler2: 562 bytes object code size  0.2/0.2/[0.2]
 

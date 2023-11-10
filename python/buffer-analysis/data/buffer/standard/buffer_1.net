@@ -15,7 +15,7 @@ Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
 .lib C:\Users\giorg\AppData\Local\LTspice\lib\cmp\standard.mos
 * - ### Buffer\n    - #### energy\n        - energy_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(supply) and i(Vsupply) between 13 ns and 22 ns`\n    - #### delay\n        - ##### rise\n            - rise_delay_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(IN) and V(OUT)`\n        - ##### fall\n            - fall_delay_connected_buffer `keep the entire circuit connected and carry out the measurements taking into account v(IN) and V(OUT)`
 .PARAM l_min_pmos=0.1u  ; Batch instruction
-.PARAM w_min_pmos=0.2u  ; Batch instruction
+.PARAM w_min_pmos=0.18u  ; Batch instruction
 .PARAM l_min_nmos=0.1u  ; Batch instruction
 .PARAM w_min_nmos=0.12u  ; Batch instruction
 .PARAM S1=mc(4,0.75)  ; Batch instruction

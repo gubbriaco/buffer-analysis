@@ -1,0 +1,20 @@
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\get_sizing\minimum_inverter_sizing_analysis.asc
+M1 OUT IN 0 N001 EECMOSN l=l_min_nmos w=w_min_nmos
+Cload OUT 0 5f
+Vsupply supply 0 1
+Vin IN 0 PULSE(0 1 5n 10p 10p 5n 10n)
+M2 supply IN OUT supply EECMOSP l=l_min_pmos w={w_min_pmos_analysis}
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\giorg\AppData\Local\LTspice\lib\cmp\standard.mos
+.PARAM l_min_pmos=0.1u  ; Batch instruction
+.PARAM l_min_nmos=0.1u  ; Batch instruction
+.PARAM w_min_nmos=0.12u  ; Batch instruction
+.inc ../../../../../ltspice/utils/utils-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
+.tran 0 50n 0
+.step param w_min_pmos_analysis 0.12u 0.24u 0.01u
+.meas w_min_pmos_analysis_values param w_min_pmos_analysis
+.measure tran rise_delay_connected trig v(IN) val=0.5 fall=1 targ v(OUT) val=0.5 rise=1
+.measure tran fall_delay_connected trig v(IN) val=0.5 rise=1 targ v(OUT) val=0.5 fall=1
+.backanno
+.end
