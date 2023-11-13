@@ -29,18 +29,6 @@ step = 10;
 step_range = ((d_max-d_min)/step)+1;
 delay_range = d_max : -step : d_min;
 
-
-%% optimization algorithm options
-options = optimoptions('fmincon', ...
-                                  'Display', 'off', ...
-                                  'MaxIterations', 1000, ...
-                                  'MaxFunctionEvaluations', 10000, ...
-                                  'StepTolerance', 0.01, ...
-                                  'OptimalityTolerance', 0.1, ...
-                                  'ConstraintTolerance', 1, ...
-                                  'ObjectiveLimit', -1e20);
-
-                              
 %% formatting optimal values generated
 fprintf('%-15s %-15s %-15s %-15s\n', 'delay_step', 's1', 's2', 'optimal_energy');
 
@@ -48,6 +36,9 @@ fprintf('%-15s %-15s %-15s %-15s\n', 'delay_step', 's1', 's2', 'optimal_energy')
 %% sizing factor arrays
 s1 = [];
 s2 = [];
+
+%% optimization algorithm options
+options = optimoptions('fmincon', 'Display', 'off');
 
 
 %% optimization algorithm
@@ -61,7 +52,8 @@ for d = delay_range
                                            [], ...
                                            [0, 0], ...
                                            [], ...
-                                           @(s) delay_constraints(s, d, tau_nom, s_load, gamma_d));
+                                           @(s) delay_constraints(s, d, tau_nom, s_load, gamma_d), ...
+                                           options);
     s1 = [s1 ; optimal_s(1)];
     s2 = [s2 ; optimal_s(2)];
     fprintf('%-15d %-15.4f %-15.4f %-15.4f\n', d, optimal_s(1), optimal_s(2), optimal_energy);
