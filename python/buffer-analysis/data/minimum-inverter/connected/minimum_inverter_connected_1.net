@@ -1,4 +1,4 @@
-* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\connected\minimum_inverter_connected.asc
+* d:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\connected\minimum_inverter_connected.asc
 M1 supply IN OUT supply EECMOSP l=l_min_pmos w=w_min_pmos
 M2 OUT IN 0 0 EECMOSN l=l_min_nmos w=w_min_nmos
 Vsupply supply 0 1
