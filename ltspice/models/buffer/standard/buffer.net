@@ -1,4 +1,4 @@
-* d:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\standard\buffer.asc
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\standard\buffer.asc
 M1 supplyL OUT OUTL supplyL EECMOSP l=l_min_pmos w={w_min_pmos*S_LOAD}
 M2 OUTL OUT 0 0 EECMOSN l=l_min_nmos w={w_min_nmos*S_LOAD}
 M3 supply N001 OUT supply EECMOSP l=l_min_pmos w={w_min_pmos*S2}

@@ -1,4 +1,4 @@
-Circuit: * d:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\disconnected\minimum_inverter_disconnected.asc
+Circuit: * D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\disconnected\minimum_inverter_disconnected.asc
 
 WARNING: Node N001 is floating.
 
@@ -27,8 +27,8 @@ Measurement: fall_delay_disconnected
      2	7.56811e-12	5.005e-09	5.01257e-09
 
 
-Date: Tue Nov 21 21:47:25 2023
-Total elapsed time: 0.371 seconds.
+Date: Fri Nov 24 23:19:18 2023
+Total elapsed time: 0.389 seconds.
 
 tnom = 27
 temp = 27
@@ -42,6 +42,6 @@ matrix size = 9
 fillins = 0
 solver = Normal
 Avg thread counts: 2.0/3.2/3.2/2.0
-Matrix Compiler1: 368 bytes object code size  0.4/0.5/[0.3]
-Matrix Compiler2: off  [0.3]/0.4/0.4
+Matrix Compiler1: 368 bytes object code size  0.4/1.0/[0.3]
+Matrix Compiler2: 583 bytes object code size  0.2/0.5/[0.2]
 

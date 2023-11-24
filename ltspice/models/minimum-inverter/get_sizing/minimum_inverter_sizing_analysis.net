@@ -1,4 +1,4 @@
-* d:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\get_sizing\minimum_inverter_sizing_analysis.asc
+* D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\get_sizing\minimum_inverter_sizing_analysis.asc
 M1 OUT IN 0 N001 EECMOSN l=l_min_nmos w=w_min_nmos
 Cload OUT 0 5f
 Vsupply supply 0 1

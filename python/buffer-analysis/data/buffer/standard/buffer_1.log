@@ -1,4 +1,4 @@
-Circuit: * d:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\standard\buffer.asc
+Circuit: * D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\buffer\standard\buffer.asc
 
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
@@ -635,8 +635,8 @@ Measurement: fall_delay_connected
    100	1.77062e-10	5.005e-09	5.18206e-09
 
 
-Date: Tue Nov 21 21:47:13 2023
-Total elapsed time: 16.590 seconds.
+Date: Fri Nov 24 23:19:03 2023
+Total elapsed time: 16.675 seconds.
 
 tnom = 27
 temp = 27
@@ -650,6 +650,6 @@ matrix size = 10
 fillins = 0
 solver = Normal
 Avg thread counts: 3.2/3.0/3.1/1.9
-Matrix Compiler1:      23 opcodes  0.3/0.2/[0.2]
-Matrix Compiler2: off  [0.2]/0.3/0.2
+Matrix Compiler1: 400 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 788 bytes object code size  0.1/0.1/[0.1]
 

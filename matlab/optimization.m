@@ -73,7 +73,7 @@ fileID_s1 = fopen(s1_data, 'w');
 fileID_s2 = fopen(s2_data, 'w');
 
 if or(fileID_s1 == -1, fileID_s2 == -1)
-    error('Impossibile aprire il file s1_data e/o s2_data');
+    error('Unable to open s1_data and/or s2_data file');
 else
     fclose(fileID_s1);
     fclose(fileID_s2);
@@ -85,7 +85,7 @@ fileID_s1 = fopen(s1_data, 'a');
 fileID_s2 = fopen(s2_data, 'a');
 
 if or(fileID_s1 == -1, fileID_s2 == -1)
-    error('Impossibile aprire il file s1_data e/o s2_data');
+    error('Unable to open s1_data and/or s2_data file');
 else
     fprintf(fileID_s1, '%d\n', s1);
     fprintf(fileID_s2, '%d\n', s2);
