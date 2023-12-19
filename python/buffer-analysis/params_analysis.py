@@ -2,6 +2,7 @@ import statistics as st
 from utils.conversion import to_order, Order
 from utils.dir import get_values_from_file
 from utils.paths import data
+from models.ops import table_creation
 import os
 
 
@@ -110,6 +111,27 @@ def params_analysis():
     gamma_d_file_path = os.path.join(data, 'out', 'params', 'gamma_d_analysis.txt')
     with open(gamma_d_file_path, 'w') as file:
         file.write(f'{gamma_d}\n')
+
+    tmp1 = []
+    tmp1.append(c_min)
+    tmp2 = []
+    tmp2.append(gamma_e)
+    tmp3 = []
+    tmp3.append(tau_nom)
+    tmp4 = []
+    tmp4.append(gamma_d)
+    data_table_params_analysis = {
+        'c_min': tmp1,
+        'gamma_e': tmp2,
+        'tau_nom': tmp3,
+        'gamma_d': tmp4
+    }
+    table_creation(
+        data_table=data_table_params_analysis,
+        title_plot="Params Analysis",
+        title_image_saving="table_params_analysis.png",
+        figsize=[18, 4]
+    )
 
 
 if __name__ == "__main__":

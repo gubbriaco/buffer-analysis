@@ -14,6 +14,18 @@ def optimize_considering_delay(
         s0,
         max_iter
 ):
-    delay_constraints = ({'type': 'eq', 'fun': delay_constraint, 'args': (delay, tau_nom, gamma_d, s_load)})
-    result = minimize(energy, s0, args=(gamma_e, vdd, c_min, s_load), constraints=delay_constraints, method='SLSQP')
+    delay_constraints = (
+        {
+            'type': 'eq', 'fun': delay_constraint,
+            'args': (delay, tau_nom, gamma_d, s_load)
+        }
+    )
+    result = minimize(
+        energy,
+        s0,
+        args=(gamma_e, vdd, c_min, s_load),
+        constraints=delay_constraints,
+        method='SLSQP',
+        options={'maxiter': max_iter}
+    )
     return result.x, result.fun, result.nit
