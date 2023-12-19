@@ -111,6 +111,17 @@ def optimization_analysis():
         for val in s2_from_python:
             file.write(f'{val}\n')
 
+    """Optimization unconstrained by 2 variables, S1 and S2, can be performed using the scipy.minimise optimization 
+    algorithm. Specifically, the SLSQP algorithm was chosen, which performs a non-linear optimization and, 
+    in addition, 2 constraints on the delay were considered: one of equality and one of inequality. The parameters 
+    used, scaled appropriately, are those previously calculated. It must be specified that an initial point S0 was 
+    chosen for the optimization, assuming, therefore, that the initial scaling factors S1 and S2 are both equal to 
+    10. Furthermore, it has been specified that the maximum number of iterations of the algorithm, 
+    for each optimization performed, is equal to 10000. Therefore, considering a delay range [d_max,d_min] = [510,
+    100] to obtain a better optimization scaling of the sizing, we will obtain d_max-d_min/step, where step=10 is the 
+    optimization step between one delay considered and the next, optimum sizing factors considering the design 
+    parameters calculated previously."""
+
 
 if __name__ == "__main__":
     optimization_analysis()

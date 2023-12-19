@@ -6,6 +6,11 @@ import os
 
 
 def buffer_optimized_plotting():
+    """
+    A comparative graphical analysis is carried out between the newly obtained optimal curve, via an optimisation
+    algorithm, and the empirical analysis, previously obtained via Monte Carlo experiments.
+    :return:
+    """
     delay_connected_buffer_analysis_file_path = os.path.join(data, 'out', 'buffer', 'standard',
                                                              'delay_connected_buffer_analysis.txt')
     delay_connected_buffer = get_values_from_file(delay_connected_buffer_analysis_file_path)
@@ -39,6 +44,13 @@ def buffer_optimized_plotting():
     plt.tight_layout()
     save_image(image_path=os.path.join(images, "comparative_analysis.png"), plt=plt)
     plt.show()
+
+    """It is possible to observe how the optimal curve obtained by means of the optimisation algorithm slightly 
+    approximates the minimum points obtained by means of Monte Carlo experiments, i.e. the possible empirical curve 
+    hypothesised to contour the minimum points of the scatter plot according to the reasoning previously made. It 
+    must be specified that this possible optimal Pareto curve obtained by means of the optimisation algorithm depends 
+    on the implementation of the algorithm itself and, therefore, with different algorithms one could obtain a better 
+    approximation of the hypothesised empirical curve or even a worse one."""
 
 
 if __name__ == "__main__":

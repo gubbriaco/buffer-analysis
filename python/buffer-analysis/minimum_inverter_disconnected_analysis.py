@@ -8,6 +8,12 @@ import re
 
 
 def minimum_inverter_disconnected_analysis():
+    """
+    The minimum disconnected inverter is used to calculate the energy, rise time and fall time from disconnected.
+    These parameters will be used later for further analysis. Considering the inverter disconnected means considering
+    the output OUT from the load inverter to be disconnected.
+    :return:
+    """
     w_min_pmos_file_path = os.path.join(data, 'out', 'minimum-inverter', 'get_sizing', 'w_min_pmos.txt')
     values = []
     with open(w_min_pmos_file_path, 'r') as file:

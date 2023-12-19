@@ -77,6 +77,13 @@ def params_analysis():
     with open(gamma_e_file_path, 'w') as file:
         file.write(f'{gamma_e}\n')
 
+    """Considering that E = C * Vdd^2 then it is possible to derive the capacity with the inverse formula: C = E / 
+    Vdd^2. Therefore, the total capacity c_tot will be obtained by considering the energy associated with the minimum 
+    connected inverter, the output capacity c_out will be obtained by considering the energy associated with the 
+    minimum disconnected inverter, and finally, the input capacity c_in is obtained via the difference between the 
+    total capacity c_tot and the output capacity c_out. Therefore, the gamma_e parameter can be calculated via the 
+    ratio of the intrinsic output capacitance c_out to the input capacitance c_in."""
+
     tau_nom = delay_disconnected_minimum_inverter
     tau_nom = st.mean(tau_nom)
     print(f"tau_nom = {tau_nom}")
@@ -111,6 +118,13 @@ def params_analysis():
     gamma_d_file_path = os.path.join(data, 'out', 'params', 'gamma_d_analysis.txt')
     with open(gamma_d_file_path, 'w') as file:
         file.write(f'{gamma_d}\n')
+
+    """The parameter tau_nom is equal to the delay associated with the minimum disconnected inverter. Specifically, 
+    the latter is obtained by averaging the rise time and the fall time of the inverter itself. The tau_tot, 
+    on the other hand, is equal to the delay associated with the connected buffer where the latter is calculated as 
+    the average between the rise time and the fall time of the buffer itself. Therefore, considering a load inverter 
+    sizing factor of 50, through the delay model associated with the 3-stage buffer, the associated gamma_d can be 
+    calculated."""
 
     tmp1 = []
     tmp1.append(c_min)

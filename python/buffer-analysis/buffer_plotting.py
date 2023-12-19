@@ -27,6 +27,23 @@ def buffer_plotting():
     save_image(image_path=os.path.join(images, "s1_s2_montecarlo_trend.png"), plt=plt)
     plt.show()
 
+    """It can be seen that the experiments conducted according to the Monte Carlo method actually reflect the design 
+        values: the values generated for S1 are around 4 with a variation of 0.75 and the values generated for S2 are 
+        around 16 with a variation of 0.75."""
+
+    """At this point, the energy-delay points obtained after considering the random variables S1 and S2 by means of 
+    the Monte Carlo method and after simulating the 3-stage buffer are plotted. Specifically, the plot considered is 
+    of the scatter type with the delay on the abscissas and the energy on the ordinates. Performing an initial 
+    empirical analysis, it is possible to note that the optimum possible points from the point of view of low power 
+    could be represented by all the points that present an energy-delay trade-off that makes their ratio as low as 
+    possible, or at the same energy considering even greater delays. This last statement allows us to consider a 
+    buffer with low power criteria, which is our goal while considering longer delays. Therefore, the optimal 
+    possible curve could coincide with the minimum points obtained from the simulations considering Monte Carlo 
+    experiments and visible in the scatter plot. It must be specified that this curve is not necessarily the optimal 
+    one. In fact, this has to be confirmed by means of unconstrained optimisation with 2 variables, S1 and S2, 
+    using the scipy.minimise optimisation algorithm available in Python or fmincon in MATLAB. Therefore, the optimal 
+    curve will then be generated and compared with the scatter plot energy-delay obtained."""
+
     delay_connected_buffer_analysis_file_path = os.path.join(data, 'out', 'buffer', 'standard',
                                                              'delay_connected_buffer_analysis.txt')
     delay_connected_buffer = get_values_from_file(delay_connected_buffer_analysis_file_path)

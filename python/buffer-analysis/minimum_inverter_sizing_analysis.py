@@ -11,6 +11,14 @@ from utils.patterns import rise_delay_connected_pattern, fall_delay_connected_pa
 
 
 def minimum_inverter_sizing_analysis():
+    """
+    The dimensioning of a minimum inverter involves analysing it by considering an associated load, a Vin and a
+    Vsupply. Specifically, what is analysed is the rise and fall time obtained at the output (Vout). It must be
+    specified that the minimum PMOS sizing of the minimum inverter in question occurs at a rise time equal to the
+    corresponding fall time or at least in an infinitesimal range thereof.
+    :return:
+    """
+
     minimum_inverter_sizing_analysis_netlist = load_asc(
         asc_file_path=os.path.join(ltspice, "minimum-inverter/get_sizing/minimum_inverter_sizing_analysis.asc"),
         schematic_image_path=os.path.join(images, "minimum_inverter_sizing_analysis.png")
@@ -128,6 +136,11 @@ def minimum_inverter_sizing_analysis():
     w_min_pmos_file_path = os.path.join(data, 'out', 'minimum-inverter', 'get_sizing', 'w_min_pmos.txt')
     with open(w_min_pmos_file_path, 'w') as file:
         file.write(f'{w_min_pmos}\n')
+
+    """What has been done is to calculate the difference between the corresponding ascent time and descent time and 
+    consider the minimum of all calculated differences. What can be seen is that the differences are all almost very 
+    small (on the order of magnitude of 10e-11). One of them turns out to be even smaller than the others (of the 
+    order of magnitude 10e-14). Therefore, a corresponding width W of the PMOS transistor of 0.18u is obtained."""
 
 
 if __name__ == "__main__":

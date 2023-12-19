@@ -11,6 +11,15 @@ import re
 
 
 def buffer_analysis():
+    """
+    The buffer considered for the analysis of this project is a 3-stage chain inverter where the first inverter
+    corresponds to the minimum sized inverter according to the previous analysis, the second inverter is sized S1
+    times the minimum inverter and the third inverter is sized S2 times the minimum inverter. Specifically,
+    S1 and S2 are parameters defined according to Monte Carlo experiments. It must be specified that, to carry out
+    the analysis, the buffer is connected to a load inverter sized 50 times the minimum inverter.
+    :return:
+    """
+
     w_min_pmos_file_path = os.path.join(data, 'out', 'minimum-inverter', 'get_sizing', 'w_min_pmos.txt')
     values = []
     with open(w_min_pmos_file_path, 'r') as file:

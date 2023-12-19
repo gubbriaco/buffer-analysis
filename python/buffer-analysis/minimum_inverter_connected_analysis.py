@@ -8,6 +8,12 @@ import re
 
 
 def minimum_inverter_connected_analysis():
+    """
+    The minimum connected inverter is used to calculate the energy, rise time and fall time to be connected. These
+    parameters will be used later for further analysis. Considering the inverter connected means considering the
+    output OUT to be connected to a load inverter.
+    :return:
+    """
     w_min_pmos_file_path = os.path.join(data, 'out', 'minimum-inverter', 'get_sizing', 'w_min_pmos.txt')
     values = []
     with open(w_min_pmos_file_path, 'r') as file:

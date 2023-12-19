@@ -39,6 +39,9 @@ def buffer_optimized_plotting_matlab():
     plt.tight_layout()
     save_image(image_path=os.path.join(images, "comparative_analysis_matlab.png"), plt=plt)
     plt.show()
+    """It can be seen that the Pareto optimal curve obtained via MATLAB's optimal dimensioning factors better 
+    approximates the hypothetical empirical curve than the one generated via the scipy.minimise optimisation 
+    algorithm."""
 
     delay_connected_buffer_optimized_matlab = delay_connected_buffer_optimized
     energy_connected_buffer_optimized_matlab = energy_connected_buffer_optimized
