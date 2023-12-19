@@ -1,0 +1,45 @@
+Circuit: * D:\Disco D\universita\magistrale\progettazione-low-power\progetti\progetto-1\ltspice\models\minimum-inverter\connected\minimum_inverter_connected.asc
+
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+.step run=1
+.step run=2
+
+
+Measurement: energy_connected
+  step	INTEG(v(supply)*i(vsupply))	FROM	TO
+     1	-1.23608e-15	1.8e-08	2.2e-08
+     2	-1.23608e-15	1.8e-08	2.2e-08
+
+Measurement: rise_delay_connected
+  step	rise_delay_connected	FROM	TO
+     1	2.1613e-11	1.0015e-08	1.00366e-08
+     2	2.1613e-11	1.0015e-08	1.00366e-08
+
+Measurement: fall_delay_connected
+  step	fall_delay_connected	FROM	TO
+     1	1.8692e-11	5.005e-09	5.02369e-09
+     2	1.8692e-11	5.005e-09	5.02369e-09
+
+
+Date: Tue Dec 19 19:43:54 2023
+Total elapsed time: 0.226 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3066
+traniter = 3052
+tranpoints = 1228
+accept = 1174
+rejected = 54
+matrix size = 8
+fillins = 0
+solver = Normal
+Avg thread counts: 3.2/3.2/3.2/1.9
+Matrix Compiler1: 300 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 562 bytes object code size  0.1/0.2/[0.1]
+
