@@ -96,14 +96,6 @@ def minimum_inverter_sizing_analysis():
     fall_delay_minimum_inverter_sizing_analysis = [float(line.split('\t')[1]) for line in
                                                    fall_delay_minimum_inverter_sizing_analysis_lines]
 
-    plt.plot(w_min_pmos_analysis, rise_delay_minimum_inverter_sizing_analysis, label='rise_delay')
-    plt.plot(w_min_pmos_analysis, fall_delay_minimum_inverter_sizing_analysis, label='fall_delay')
-    plt.ylabel('delay')
-    plt.xlabel('w_pmos')
-    plt.title('Rise and Fall Delay as a function of W PMOS')
-    plt.legend(['rise_delay', 'fall_delay'])
-    plt.show()
-
     diff_delay = [
         abs(rise_delay - fall_delay)
         for rise_delay, fall_delay in
