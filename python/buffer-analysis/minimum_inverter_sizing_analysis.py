@@ -99,12 +99,17 @@ def minimum_inverter_sizing_analysis():
     diff_delay = [
         abs(rise_delay - fall_delay)
         for rise_delay, fall_delay in
-        zip(rise_delay_minimum_inverter_sizing_analysis, fall_delay_minimum_inverter_sizing_analysis)
+        zip(
+            rise_delay_minimum_inverter_sizing_analysis,
+            fall_delay_minimum_inverter_sizing_analysis
+        )
     ]
 
     data_table_w_pmos = {
-        'w_pmos [m]': w_min_pmos_analysis,
-        'rise_delay-fall_delay [s]': diff_delay
+        'rise_delay [s]': rise_delay_minimum_inverter_sizing_analysis,
+        'fall_delay [s]': fall_delay_minimum_inverter_sizing_analysis,
+        'rise_delay-fall_delay [s]': diff_delay,
+        'w_pmos [m]': w_min_pmos_analysis
     }
     table_creation(
         data_table=data_table_w_pmos,
