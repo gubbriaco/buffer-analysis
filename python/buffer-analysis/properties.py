@@ -2,7 +2,7 @@ from utils.paths import rit_models_for_ltspice_file_path
 
 # pmos-minimum_inverter_sizing_analysis
 w_min_pmos_start = '0.12u'
-w_min_pmos_stop = '0.24u'
+w_min_pmos_stop = '0.36u'
 w_min_pmos_step = '0.01u'
 w_min_pmos_step_param = f'.step param w_min_pmos_analysis {w_min_pmos_start} {w_min_pmos_stop} {w_min_pmos_step}'
 
@@ -25,7 +25,7 @@ S2 = 'mc(16,0.75)'
 S_LOAD = '50'
 
 # time-run
-tran = ".tran 0 50n 0"
+tran = ".tran 0 65n 0 10p"
 
 # rit-models
 rit_models = f".inc {rit_models_for_ltspice_file_path}"

@@ -93,17 +93,22 @@ def minimum_inverter_sizing_analysis():
 
     rise_delay_minimum_inverter_sizing_analysis = [float(line.split('\t')[1]) for line in
                                                    rise_delay_minimum_inverter_sizing_analysis_lines]
-
     fall_delay_minimum_inverter_sizing_analysis = [float(line.split('\t')[1]) for line in
                                                    fall_delay_minimum_inverter_sizing_analysis_lines]
 
-    diff_delay = [-1] * len(rise_delay_minimum_inverter_sizing_analysis) if len(
-        rise_delay_minimum_inverter_sizing_analysis) == len(fall_delay_minimum_inverter_sizing_analysis) else -1
-    i = 0
-    for rise_delay, fall_delay in zip(rise_delay_minimum_inverter_sizing_analysis,
-                                      fall_delay_minimum_inverter_sizing_analysis):
-        diff_delay[i] = abs(rise_delay - fall_delay)
-        i = i + 1
+    plt.plot(w_min_pmos_analysis, rise_delay_minimum_inverter_sizing_analysis, label='rise_delay')
+    plt.plot(w_min_pmos_analysis, fall_delay_minimum_inverter_sizing_analysis, label='fall_delay')
+    plt.ylabel('delay')
+    plt.xlabel('w_pmos')
+    plt.title('Rise and Fall Delay as a function of W PMOS')
+    plt.legend(['rise_delay', 'fall_delay'])
+    plt.show()
+
+    diff_delay = [
+        abs(rise_delay - fall_delay)
+        for rise_delay, fall_delay in
+        zip(rise_delay_minimum_inverter_sizing_analysis, fall_delay_minimum_inverter_sizing_analysis)
+    ]
 
     data_table_w_pmos = {
         'w_pmos [m]': w_min_pmos_analysis,
@@ -113,21 +118,12 @@ def minimum_inverter_sizing_analysis():
         data_table=data_table_w_pmos,
         title_plot="W_PMOS Sizing Analysis",
         title_image_saving="table_w_pmos_sizing_analysis.png",
-        figsize=[16, 4]
+        figsize=[16, 7]
     )
 
-    i_min_diff = 0
-    min_diff = diff_delay[i_min_diff]
-    for i in range(len(diff_delay)):
-        if diff_delay[i] < min_diff:
-            i_min_diff = i
-            min_diff = diff_delay[i]
-    print(f'min(rise_delay-fall_delay) = {min_diff}')
-
-    w_min_pmos_value = 0
-    for i in range(len(w_min_pmos_analysis)):
-        if i == i_min_diff:
-            w_min_pmos_value = w_min_pmos_analysis[i]
+    min_diff_delay = min(diff_delay)
+    i_min_diff_delay = diff_delay.index(min_diff_delay)
+    w_min_pmos_value = w_min_pmos_analysis[i_min_diff_delay]
     print(f'w_min_pmos = {w_min_pmos_value}')
     w_min_pmos = to_order(w_min_pmos_value, Order.MICRO)
     w_min_pmos = str(w_min_pmos) + 'u'

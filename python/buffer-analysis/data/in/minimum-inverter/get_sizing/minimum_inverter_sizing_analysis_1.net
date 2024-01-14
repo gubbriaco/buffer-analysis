@@ -11,8 +11,8 @@ M2 supply IN OUT supply EECMOSP l=l_min_pmos w={w_min_pmos_analysis}
 .PARAM l_min_nmos=0.1u  ; Batch instruction
 .PARAM w_min_nmos=0.12u  ; Batch instruction
 .inc ../../../../../../ltspice/utils/utils-montecarlo-experiments/RIT_Models_For_LTSPICE.txt
-.tran 0 50n 0
-.step param w_min_pmos_analysis 0.12u 0.24u 0.01u
+.tran 0 65n 0 10p
+.step param w_min_pmos_analysis 0.12u 0.36u 0.01u
 .meas w_min_pmos_analysis_values param w_min_pmos_analysis
 .measure tran rise_delay_connected trig v(IN) val=0.5 fall=1 targ v(OUT) val=0.5 rise=1
 .measure tran fall_delay_connected trig v(IN) val=0.5 rise=1 targ v(OUT) val=0.5 fall=1
