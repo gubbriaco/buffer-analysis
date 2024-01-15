@@ -10,7 +10,7 @@ w_min_pmos_step_param = f'.step param w_min_pmos_analysis {w_min_pmos_start} {w_
 save_w_min_pmos_analysis = ".meas w_min_pmos_analysis_values param w_min_pmos_analysis"
 
 # number-of-simulations
-nr_runs = 100
+nr_runs = 10000
 
 # pmos
 l_min_pmos = '0.1u'
