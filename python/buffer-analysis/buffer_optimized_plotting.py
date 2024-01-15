@@ -1,7 +1,7 @@
 from utils.paths import images, data
 from utils.dir import get_values_from_file
 from matplotlib import pyplot as plt
-from models.ops import save_image
+from models.ops import save_image, table_creation
 import os
 
 
@@ -51,6 +51,25 @@ def buffer_optimized_plotting():
     must be specified that this possible optimal Pareto curve obtained by means of the optimisation algorithm depends 
     on the implementation of the algorithm itself and, therefore, with different algorithms one could obtain a better 
     approximation of the hypothesised empirical curve or even a worse one."""
+
+    s1_from_python_file_path = os.path.join(data, 'out', 'optimization', 's1_optimization_analysis.txt')
+    s1_from_python = get_values_from_file(s1_from_python_file_path)
+
+    s2_from_python_file_path = os.path.join(data, 'out', 'optimization', 's2_optimization_analysis.txt')
+    s2_from_python = get_values_from_file(s2_from_python_file_path)
+
+    data_table_optimal_point = {
+        'delay': delay_connected_buffer_optimized,
+        'energy': energy_connected_buffer_optimized,
+        's1': s1_from_python,
+        's2': s2_from_python
+    }
+    table_creation(
+        data_table=data_table_optimal_point,
+        title_plot="Optimal Point for Buffer",
+        title_image_saving="optimal_point_for_buffer.png",
+        figsize=[18, 12]
+    )
 
 
 if __name__ == "__main__":
