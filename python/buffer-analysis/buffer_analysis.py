@@ -48,7 +48,7 @@ def buffer_analysis():
         fall_delay_connected()
     )
     buffer_runner = SimRunner(output_folder=f"{data}/in/buffer/standard/")
-    buffer_runner.run(netlist=buffer_netlist, timeout=3600)
+    buffer_runner.run(netlist=buffer_netlist, timeout=7200)
     print('Successful/Total Simulations: ' + str(buffer_runner.okSim) + '/' + str(buffer_runner.runno))
 
     buffer_raw = ""
